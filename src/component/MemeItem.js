@@ -19,11 +19,11 @@ class MemeItem extends Component {
         }}
       >
         <img
-          className={this.state.hover ? "meme-img darken-img" : "meme-img"}
+          className={this.state.hovered ? "meme-img darken-img" : "meme-img"}
           src={this.props.meme.url}
           alt={this.props.meme.name}
         />
-        <p className={this.state.hover ? "meme-text" : "no-text"}>
+        <p className={this.state.hovered ? "meme-text" : "no-text"}>
           {this.props.meme.name}
         </p>
       </div>
