@@ -47,7 +47,12 @@ class App extends Component {
           </Col>
         </Form>
         {this.props.meme.slice(0, this.state.memeLimit).map(meme => (
-          <MemeItem key={meme.id} meme={meme} />
+          <MemeItem
+            key={meme.id}
+            meme={meme}
+            text0={this.state.text0}
+            text1={this.state.text1}
+          />
         ))}
         <p
           className="LoadMore"

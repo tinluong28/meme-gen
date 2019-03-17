@@ -1,4 +1,5 @@
 export const RECEIVE_MEMES = "RECEIVE_MEMES";
+export const NEW_MEME = "NEW_MEME";
 
 const receiveMeme = json => {
   const { memes } = json.data;
@@ -16,4 +17,11 @@ const fetchMemesJson = () => {
 
 export const fetchMemes = () => dispatch => {
   fetchMemesJson().then(json => dispatch(receiveMeme(json)));
+};
+
+export const newMeme = meme => {
+  return {
+    type: NEW_MEME,
+    meme
+  };
 };
