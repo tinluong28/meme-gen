@@ -15,7 +15,10 @@ body {
   margin: 5px;
   cursor: pointer;
 }
-
+.LoadMore:hover {
+  cursor: pointer;
+  text-decoration-line: underline;
+}
 .meme-img {
   width: 150px;
   height: 150px;
