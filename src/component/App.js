@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import MemeItem from "./MemeItem";
+import MyMemes from "./MyMemes";
 import "../index.css";
 
 import { Form, FormGroup, FormControl, FormLabel, Col } from "react-bootstrap";
@@ -19,13 +20,13 @@ class App extends Component {
         <h2 className="mb-5">
           <u>Welcome to the Meme Generator!</u>
         </h2>
-
-        <Form inline>
-          <Col md="auto">
+        <MyMemes />
+        <Form className="input-form" inline>
+          <Col>
             <FormGroup>
-              <FormLabel className="pr-3">
+              <Form.Label className="pr-3">
                 <strong>Top</strong>
-              </FormLabel>
+              </Form.Label>
               <FormControl
                 type="text"
                 onChange={e => this.setState({ text0: e.target.value })}
@@ -33,11 +34,11 @@ class App extends Component {
               />
             </FormGroup>
           </Col>{" "}
-          <Col md="auto">
+          <Col>
             <FormGroup>
-              <FormLabel className="pr-3">
+              <Form.Label className="pr-3">
                 <strong>Bottom</strong>
-              </FormLabel>
+              </Form.Label>
               <FormControl
                 type="text"
                 onChange={e => this.setState({ text1: e.target.value })}
@@ -46,6 +47,7 @@ class App extends Component {
             </FormGroup>
           </Col>
         </Form>
+
         {this.props.meme.slice(0, this.state.memeLimit).map(meme => (
           <MemeItem
             key={meme.id}

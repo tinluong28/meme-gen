@@ -29,9 +29,12 @@ const newMeme = meme => {
 };
 
 export const postMemeJson = params => {
+  //Pass username and password into the params
+  //To keep their value secrets
   params["username"] = username;
   params["password"] = password;
 
+  // To run through the param object and make it a string
   const bodyParams = Object.keys(params)
     .map(key => {
       return encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
@@ -39,6 +42,7 @@ export const postMemeJson = params => {
     .join("&");
 
   console.log("bodyParams", bodyParams);
+  //x-www-form
   return fetch("https://api.imgflip.com/caption_image", {
     method: "POST",
     headers: {
